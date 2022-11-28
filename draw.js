@@ -12,6 +12,11 @@ let prevTime = performance.now();
 const velocity = new THREE.Vector3();
 const direction = new THREE.Vector3();
 
+const objects = [];
+const xArr = [];
+const yArr = [];
+const zArr = [];
+
 $(document).ready(function(){
   function startFrame() {
     camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 500 );
@@ -91,20 +96,28 @@ $(document).ready(function(){
     const floor = new THREE.PlaneGeometry( 100, 100 );
     floor.rotateX( - Math.PI / 2 );
     floor.translate( 0, -1, 0 );
-    const material = new THREE.MeshBasicMaterial( { color: 0xa1a1a1 } );
+    const material = new THREE.MeshPhongMaterial( { color: 0xa1a1a1 } );
     const mesh = new THREE.Mesh( floor, material );
     scene.add( mesh );
 
-    for(let i=0;i<10;i++) {
+    for(let i=0;i<20;i++) {
       let spObj = new THREE.SphereGeometry(2, 32, 16);
-      spObj.translate(
-        Math.floor(Math.random() * 100)-50, 
-        1,
-        Math.floor(Math.random() * 100)-50);
-      let sMaterial = new THREE.MeshBasicMaterial( { color: 0xff0000 } );
+      let x = Math.floor(Math.random() * 100)-50;
+      let y = 1;
+      let z = Math.floor(Math.random() * 100)-50;
+      
+      spObj.translate(x,y,z);
+      let sMaterial = new THREE.MeshPhongMaterial( { color: 0xff0000 } );
       let sphere = new THREE.Mesh( spObj, sMaterial );
       scene.add( sphere );
+      objects.push(sphere);
+      xArr.push(x);
+      yArr.push(y);
+      zArr.push(z);
     }
+    const light = new THREE.PointLight( 0xffffff, 4, 150 );
+light.position.set( 0, 100, 0 );
+scene.add( light );
     //end of elements
     
     camera.position.z = 5;
@@ -159,6 +172,9 @@ $(document).ready(function(){
 					// 	canJump = true;
 					// }
 				}
+        for(let i=0;i<objects.length;i++) {
+          objects[i].position.x = xArr[0] + 5*Math.sin(time*0.01);
+        }
 				prevTime = time;
 				renderer.render( scene, camera );
 			}
