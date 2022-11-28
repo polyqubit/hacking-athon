@@ -1,0 +1,131 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+body{
+  color: #00b2fd;
+  background-color: #170d3a;
+}
+section{
+  height: 100%;
+}
+.hide{
+  display: none !important;
+}
+.visible{
+  display: block !important;
+}
+.visibleGrid{
+  display: grid;
+}
+.blue{
+  background-color: #99ceff;
+}
+#score{
+  position:absolute;
+}
+#cover{
+  position: relative;
+  top: 15%;
+}
+#game2{
+  grid-template-rows: 17% 50%;
+}
+#game2 #clickCharacter{
+  font-size: 70px;
+  margin: auto;
+  color: blue;
+}
+#backButton{
+  color: darkblue;
+  background: #b86cff;
+  font-size: 36px;
+  border-width: 5px;
+  border-color: #dbfffe9e;
+  border-radius: 8px;
+  border-style: ridge;
+  margin: 5px;
+  margin-bottom: 2%;
+  padding: 2px;
+  padding-right: 14px;
+  padding-left: 8px;
+}
+#backButton:hover{
+  transition: 0.05s;
+  transform: scale(1.08);
+  background-color: #8400ff;
+}
+#backButton:active{
+  transition: 0.05;
+  transform: scale(0.98);
+  background-color: #ba70ff;
+}
+#startButtons{
+  display: grid;
+  width: fit-content;
+  margin: auto;
+}
+#startButtons button{
+    color: darkblue;
+    background: blueviolet;
+    margin: 40px;
+    font-size: 55px;
+    border-width: 13px;
+    border-color: #cefffe9e;
+    border-radius: 8px;
+    border-style: ridge;
+}
+#startButtons button:hover{
+  transition: 0.05s;
+  transform: scale(1.08);
+  background-color: #8400ff;
+}
+#startButtons button:active{
+  transition: 0.05;
+  transform: scale(0.98);
+  background-color: #b566ff;
+}
+#sun{
+  float:right;
+}
+#game2Character{
+    width: fit-content;
+    margin: auto;
+}
+#quandaleDingle1{
+  margin-right: 5vmax;
+  margin-left: 5vmax;
+}
+
+
+
+#characterBoy{
+    width: 20px;
+    height: 50px;
+    position:relative;
+    top: 150px;
+}
+.animate{
+    animation: jump 0.3s linear;
+}
+@keyframes jump{
+    0%{top: 150px;}
+    30%{top: 100px;}
+    70%{top: 100px;}
+    100%{top: 150px;}
+}
+
+#cags2{
+  display:block;
+    background-color: blue;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    margin-top: 130px;
+    margin-left: 500px;
+    animation: block 1s infinite linear;
+}
+@keyframes cags2{
+    0%{margin-right: 500px}
+    100%{margin-right: -20px}
+}

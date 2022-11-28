@@ -1,0 +1,42 @@
+$(document).ready(function(){
+  console.log("selection.js loaded");
+  $('#startGame1').on('click',()=>{
+    console.log("hii");
+    $('#startButtons').addClass('hide');
+    $('#startButtons').removeClass('visibleGrid');
+    $('#backButton').removeClass('hide');
+    $('#backButton').addClass('visible');
+    $('#startPage').removeClass('visibleGrid');
+    $('#startPage').addClass('visible');
+    $('p').removeClass('hide');
+    $('p').addClass('visible');
+  });
+  $('#startGame2').on('click',()=>{
+    $('#startButtons').addClass('hide');
+    $('#startButtons').removeClass('visibleGrid');
+    $('#backButton').removeClass('hide');
+    $('#backButton').addClass('visible');
+    $('#game2').removeClass('hide');
+    $('#game2').addClass('visibleGrid');
+    $('#startPage').removeClass('visibleGrid');
+    $('#startPage').addClass('hide');
+  })
+$("#game2 img").on('click',()=>{
+  $('#cags2').removeClass('hide');
+  $('#cags2').addClass('visible');
+  
+})
+  $("#backButton").on('click',()=>{
+    $('#startButtons').addClass('visibleGrid');
+    $('#startButtons').removeClass('hide');
+    $('#backButton').removeClass('visible');
+    $('#backButton').addClass('hide');
+    $('#startPage').removeClass('hide');
+    $('#startPage').removeClass('visible');
+    $('#startPage').addClass('visibleGrid');
+    $('#game2').removeClass('visibleGrid');
+    $('#game2').addClass('hide');
+    $('p').addClass('hide');
+    $('p').removeClass('visible');
+  })
+});

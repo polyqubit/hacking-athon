@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>annyeonghaseyo</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="selection.js"></script>
+  <script src="game2.js"></script>
+  <script src="draw.js" type="module"></script>
+</head>
+
+<body>
+  <button id="backButton" class="hide">Back</button>
+  <p style="color:white;position:absolute;top:0%;left:10%;" class="hide">was originally supposed to be a game where spheres emerged from random directions and the goal was to avoid them</p>
+  <div id="cover"></div>
+  <section id="startPage" class="visibleGrid">
+    <div id="startButtons" class="visibleGrid">
+    <button id="startGame1">Game 1</button>
+    <button id="startGame2">Game 2</button>
+  </div>
+  </section>
+  <section id="game2" class="hide blue">
+    <img id="sun" src="./sun.png" width="200px" class="hide">
+    <div id="grass" class="hide"></div>
+    <p id="clickCharacter">Click On Your Character</p>
+    <p id="score">Score: <span id="scoreSpan"></span></p>
+    <div id="game2Character">
+      <div class="cags2Animation">
+              <img id="cags2"src="./cags2.png" width="150px" height="150px" class="hide">
+      </div>
+      <img id="kingdomSpire"src="./kingdomSpire.png" width="150px" height="150px">
+      <img id="quandaleDingle1"src="./quandaleDingle1.png" width="150px" height="150px">
+      <img id="quandaleDingle2"src="./quandaleDingle2.png" width="150px" height="150px">
+
+
+    </div>
+  </section>
+</body>
+
+</html>
